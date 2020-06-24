@@ -15,13 +15,29 @@
   },
   "scripts": {
     "start": "serve -s build",
+    "fix": "npx eslint src/ --ignore-pattern serviceWorker.js --fix",
+    "lint": "npx eslint src/ --ignore-pattern serviceWorker.js",
     "local": "PORT=4000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "google",
+      "plugin:react/recommended"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {}
   },
   "engines": {
     "node": "10.x.x"
@@ -37,5 +53,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.20.0"
   }
 }
