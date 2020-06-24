@@ -8,16 +8,16 @@ import './App.css';
  */
 function App() {
   fetch('/api/v1/data')
-      .then((response) => response.text())
-      .then((text) => {
-        console.log('Here is the text from servlet: ', text);
-      });
+    .then((response) => response.text())
+    .then((text) => {
+      console.log('Here is the text from servlet: ', text);
+    });
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-            Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.js</code> and save to reload.
         </p>
         <a
           className="App-link"
@@ -25,7 +25,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-            Learn React
+          Learn React
         </a>
       </header>
     </div>

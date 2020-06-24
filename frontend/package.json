@@ -25,19 +25,38 @@
   "eslintConfig": {
     "extends": [
       "google",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:prettier/recommended",
+      "prettier/react"
     ],
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 11,
-        "sourceType": "module"
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "env": {
+      "es6": true,
+      "node": true
     },
     "plugins": [
-        "react"
+      "react"
     ],
-    "rules": {}
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "prettier/prettier": [
+        "error", 
+        {
+          "bracketSpacing": false,
+          "singleQuote": true,
+          "trailingComma": "es5"
+        }
+      ]
+    }
   },
   "engines": {
     "node": "10.x.x"
@@ -56,6 +75,8 @@
   },
   "devDependencies": {
     "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.0"
   }
 }
